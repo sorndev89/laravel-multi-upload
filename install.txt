@@ -1,0 +1,13 @@
+composer create-project laravel/laravel laravel-multi-upload
+
+php artisan make:controller ImageUploadController
+
+php artisan install:api
+
+in api:
+
+Route::post('/upload-images', [ImageUploadController::class, 'upload']);
+
+
+php artisan storage:link
+
