@@ -8,6 +8,46 @@ in api:
 
 Route::post('/upload-images', [ImageUploadController::class, 'upload']);
 
-
+// ສ້າງ store link
 php artisan storage:link
+
+// ຕິດຕັ້ງ vue
+    npm i vue vue-loader @vitejs/plugin-vue
+
+// ໄປທີ່ router/web.php ເພີ່ມ
+
+Route::get('{any}', function () {
+    return view('app');
+})->where('any','.*');
+
+// ໄປທີ່ resources/view ເພີ່ມໄຟລ໌ app.blade.php
+    ທຳການ add @vite('resources/css/app.css') .....
+
+
+// ໄປທີ່ vite.config.js
+    import vue....
+
+
+// ໄປທີ່ route/api.php
+    ທຳການ import imagecontroller ໂດຍການໃຊ້ use 
+    use App\Http\Controllers\ImageUploadController;
+
+    ສ້າງລີ້ງສຳລັບອັບໂຫລດ ແລະ ດຶງຮູບພາບ
+
+// ໄປທີ່ resources/js/app.js 
+
+    add
+    import { createApp } from 'vue';
+    import App from './App.vue';
+    // import router from './router';
+    
+    const app = createApp(App);
+    app.mount('#app-vue');
+
+// ສ້າງໂຟນເດີ້ components
+    - ສ້າງ ImageList.vue
+    - ສ້າງ MultiImageUpload.vue
+
+// ສ້າງໄຟລ໌ App.vue
+
 
